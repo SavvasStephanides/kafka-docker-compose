@@ -1,0 +1,2 @@
+FROM maven:3.6.3-jdk-8-openj9
+CMD cd ~/producer && ./mvnw spring-boot:run

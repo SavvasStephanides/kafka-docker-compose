@@ -1,0 +1,17 @@
+version: "3"
+
+services: 
+    kafka.queue:
+        build: ./services/kafka.queue
+
+    kafka.consumer:
+        build: ./services/kafka.consumer/.
+        volumes:
+            - ./services/kafka.consumer/content:/root
+
+    kafka.producer:
+        build: ./services/kafka.producer/.
+        volumes: 
+            - ./services/kafka.producer/content:/root
+        ports:
+            - 8080:8080
